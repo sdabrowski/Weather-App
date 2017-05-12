@@ -1,6 +1,6 @@
 $("#submit").click(function(e) {
     var zip = $("#zip-code").val();
-    if (zipip.length != 5 || isNaN(zipip)){
+    if (zip.length != 5 || isNaN(zip)){
         alert("You didn't enter a valid zip code.");
     }
     
@@ -11,14 +11,14 @@ $("#submit").click(function(e) {
 function getWeather(getZip) {
     var urlf = "http://api.wunderground.com/api/fd1358c429691325/forecast/q/" + getZip + ".json";
     var resultForecast;
-    debugger;
     $.getJSON(urlf, function(jd) { 
         $('#result').html(jd); 
         resultForecast = jd;
-    alert(resultForecast.forecast.txt_forecast.date);
+        alert("test");
+    //alert("result" + resultForecast.forecast.txt_forecast.date);
     });
     
-    var urlc = "http://api.wunderground.com/api/fd1358c429691325/forecast/q/" + getZip + ".json";
+    var urlc = "http://api.wunderground.com/api/fd1358c429691325/conditions/q/" + getZip + ".json";
     var resultConditions;
     $.getJSON(urlc, function(jd) { 
         $('#result').html(jd); 
