@@ -11,25 +11,27 @@ $("#submit").click(function(e) {
 function getWeather(getZip) {
     var urlf = "http://api.wunderground.com/api/fd1358c429691325/forecast/q/" + getZip + ".json";
     var resultForecast;
+
+    //Put tasks to be done using the received weather data within these functions.
     $.getJSON(urlf, function(jd) { 
         $('#result').html(jd); 
         resultForecast = jd;
-        alert("test");
-    //alert("result" + resultForecast.forecast.txt_forecast.date);
     });
-    
+
     var urlc = "http://api.wunderground.com/api/fd1358c429691325/conditions/q/" + getZip + ".json";
     var resultConditions;
+
+    //Put tasks to be done using the received weather data within these functions.
     $.getJSON(urlc, function(jd) { 
         $('#result').html(jd); 
         resultConditions = jd;
-    alert(resultConditions.forecast.txt_forecast.date);
+
+        //For some reason, the variables assigned within this function are not defined outside of it
+        updateText(resultConditions)
     });
-    
-    updateText(resultConditions);
 }
 
-//function updateText(resultConditions){
-//    city = resultConditions.display_location.city;
-//    alert(city);
-//}
+function updateText(resultConditions){
+    var city = resultConditions.current_observation.display_location.city;
+    $("#title").text("Weather for " + city);
+}
