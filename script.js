@@ -29,8 +29,10 @@ function getWeather(getZip) {
         resultConditions = jd;
 
         //For some reason, the variables assigned within this function are not defined outside of it
-        updateTextCond(resultConditions)
+        updateTextCond(resultConditions);
     });
+    
+    
 }
 
 
