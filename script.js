@@ -4,6 +4,8 @@ $("#submit").click(function(e) {
         alert("You didn't enter a valid zip code.");
     }
     
+    $("#weather-table").show(400);
+    
     getWeather(zip);
     e.preventDefault();
 });
@@ -65,10 +67,10 @@ function updateTextFore(resultForecast){
     $("#Day4HighLow").text("High: " + shortFore.forecastday[3].high.fahrenheit + "°F Low: " + shortFore.forecastday[3].low.fahrenheit + "°F");
 
     //Estimated Precipitation
-    $("#EstPrecip1").text("Estimated Precipitation: " + shortFore.forecastday[0].qpf_allday.in + '"');
-    $("#EstPrecip2").text("Estimated Precipitation: " + shortFore.forecastday[1].qpf_allday.in + '"');
-    $("#EstPrecip3").text("Estimated Precipitation: " + shortFore.forecastday[2].qpf_allday.in + '"');
-    $("#EstPrecip4").text("Estimated Precipitation: " + shortFore.forecastday[3].qpf_allday.in + '"');
+    $("#EstPrecip1").text("Est. Precipitation: " + shortFore.forecastday[0].qpf_allday.in + '"');
+    $("#EstPrecip2").text("Est. Precipitation: " + shortFore.forecastday[1].qpf_allday.in + '"');
+    $("#EstPrecip3").text("Est. Precipitation: " + shortFore.forecastday[2].qpf_allday.in + '"');
+    $("#EstPrecip4").text("Est. Precipitation: " + shortFore.forecastday[3].qpf_allday.in + '"');
 
 }
 function updateTextCond(resultConditions){
