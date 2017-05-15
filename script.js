@@ -62,8 +62,11 @@ function updateTextFore(resultForecast){
     $("#Day3HighLow").text("High: " + shortFore.forecastday[2].high.fahrenheit + "°F Low: " + shortFore.forecastday[2].low.fahrenheit + "°F");
     $("#Day4HighLow").text("High: " + shortFore.forecastday[3].high.fahrenheit + "°F Low: " + shortFore.forecastday[3].low.fahrenheit + "°F");
 
-    //Conditions
-
+    //Estimated Precipitation
+    $("#EstPrecip1").text("Estimated Precipitation: " + shortFore.forecastday[0].qpf_allday.in + '"');
+    $("#EstPrecip2").text("Estimated Precipitation: " + shortFore.forecastday[1].qpf_allday.in + '"');
+    $("#EstPrecip3").text("Estimated Precipitation: " + shortFore.forecastday[2].qpf_allday.in + '"');
+    $("#EstPrecip4").text("Estimated Precipitation: " + shortFore.forecastday[3].qpf_allday.in + '"');
 
 }
 function updateTextCond(resultConditions){
