@@ -1,3 +1,19 @@
 .navbar{
     border-radius: 0px;
 }
+
+.jumbotron, .well{
+    opacity: 0.9;
+}
+
+body{
+    background-image: url("storm.jpg");
+}
+
+.form-group{
+    font-size: 20px;
+}
+
+table{
+    font-size: 20px;
+}

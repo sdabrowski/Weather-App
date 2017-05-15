@@ -21,29 +21,60 @@
         
     </head>
     <body>
-         <nav class="navbar navbar-inverse">
-             <div class="navbar-brand">Weather App</div>
-         </nav>
          
           <div class="jumbotron text-center">
             <h1 id="title">Weather for Your City</h1>
         </div>
         
         <div class="container-fluid">
-           <div class="row">
-               <div class = "col-xs-12 col-md-6 text-center">
+           <div>
+               <div class = "text-center well well-sm ">
                     <form class="form-inline">
                   <div class="form-group">
-                    <label for="zip-code">Zip Code:</label>
+                    <label form="zip-code">Zip Code:</label>
                     <input type="text" class="form-control" id="zip-code" placeholder="Enter Zip Code">
                   </div>
                   <button type="submit" class="btn btn-default" id="submit">Submit</button>
                 </form>
-           </div>
+                </div>
+            </div>
+            <!--Weather Table-->
+        <div class="col-xs-6 col-sm-4 col-md-3 well">
+            <table class="table text-center">
+                <tr><td id="Day1"></td></tr>
+                <tr><td id="Day1Cond"></td></tr>
+                <tr><td><img src = "" id="Day1Icon"></td></tr>
+                <tr><td id="Day1HighLow"></td></tr>
+            </table>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 well">
+            <table class="table text-center">
+                <tr><td id="Day2"></td></tr>
+                <tr><td id="Day2Cond"></td></tr>
+                <tr><td><img src = "" id="Day2Icon"></td></tr>
+                <tr><td id="Day2HighLow"></td></tr>
+            </table>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 well">
+            <table class="table text-center">
+                <tr><td id="Day3"></td></tr>
+                <tr><td id="Day3Cond"></td></tr>
+                <tr><td><img src = "" id="Day3Icon"></td></tr>
+                <tr><td id="Day3HighLow"></td></tr>
+            </table>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 well">
+            <table class="table text-center">
+                <tr><td id="Day4"></td></tr>
+                <tr><td id="Day4Cond"></td></tr>
+                <tr><td><img src = "" id="Day4Icon"></td></tr>
+                <tr><td id="Day4HighLow"></td></tr>
+            </table>
+        </div>
             
         </div>
         
-        
+
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         
@@ -52,6 +83,13 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     </body>
+
+<!--Reference to weather underground-->
+    <footer class="text-center well">
+        <img src = http://icons.wxug.com/graphics/wu2/logo_130x80.png>
+        <p>Powered by Weather Underground</p>
+        <a href="http://www.wunderground.com">http://www.wunderground.com</a>
+    </footer>
 </html>
 
 
