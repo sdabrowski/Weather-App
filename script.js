@@ -4,7 +4,7 @@ $("#submit").click(function(e) {
         alert("You didn't enter a valid zip code.");
     }
     
-    $("#weather-table").show(400);
+    $("#weather-table").slideDown(200);
     
     getWeather(zip);
     e.preventDefault();
