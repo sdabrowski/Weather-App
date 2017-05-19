@@ -11,7 +11,7 @@ $("#submit").click(function(e) {
 });
 
 function getWeather(getZip) {
-    var urlf = "http://api.wunderground.com/api/fd1358c429691325/forecast/q/" + getZip + ".json";
+    var urlf = "http://api.wunderground.com/api/76c3fb77841aa97d/forecast/q/" + getZip + ".json";
     var resultForecast;
 
     //Put tasks to be done using the received weather data within these functions.
@@ -22,7 +22,7 @@ function getWeather(getZip) {
         updateTextFore(resultForecast);
     });
 
-    var urlc = "http://api.wunderground.com/api/fd1358c429691325/conditions/q/" + getZip + ".json";
+    var urlc = "http://api.wunderground.com/api/76c3fb77841aa97d/conditions/q/" + getZip + ".json";
     var resultConditions;
 
     //Put tasks to be done using the received weather data within these functions.
@@ -33,10 +33,7 @@ function getWeather(getZip) {
         //For some reason, the variables assigned within this function are not defined outside of it
         updateTextCond(resultConditions);
     });
-    
-    
 }
-
 
 function updateTextFore(resultForecast){
     var shortFore = resultForecast.forecast.simpleforecast
