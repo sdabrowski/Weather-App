@@ -22,6 +22,12 @@ footer{
     vertical-align: bottom;
 }
 
-#weather-table{
+#weather-table,
+#weather-spinner {
     display: none;
+}
+#weather-spinner {
+    background-image: url("gears.gif");
+    height: 96px;
+    width: 96px;
 }

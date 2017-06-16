@@ -1,13 +1,19 @@
+'use strict';
+
 $("#submit").click(function(e) {
+    $("#weather-table").slideUp(300);
+
     var zip = $("#zip-code").val();
+
+    e.preventDefault();
     if (zip.length != 5 || isNaN(zip)){
         alert("You didn't enter a valid zip code.");
     }
     
-    $("#weather-table").slideDown(200);
+    //$("#weather-spinner").show();
+    //$("#weather-table").delay(500).slideDown(200);
     
     getWeather(zip);
-    e.preventDefault();
 });
 
 function getWeather(getZip) {
@@ -15,7 +21,9 @@ function getWeather(getZip) {
     var resultForecast;
 
     //Put tasks to be done using the received weather data within these functions.
-    $.getJSON(urlf, function(jd) { 
+    $.getJSON(urlf, function(jd) {
+        //$("#weather-spinner").hide();
+        $("#weather-table").slideDown(300);
         $('#result').html(jd); 
         resultForecast = jd;
 
@@ -26,7 +34,7 @@ function getWeather(getZip) {
     var resultConditions;
 
     //Put tasks to be done using the received weather data within these functions.
-    $.getJSON(urlc, function(jd) { 
+    $.getJSON(urlc, function(jd) {
         $('#result').html(jd); 
         resultConditions = jd;
 
@@ -35,7 +43,11 @@ function getWeather(getZip) {
     });
 }
 
-function updateTextFore(resultForecast){
+function updateTextFore(resultForecast) {
+    if (typeof resultForecast.forecast === 'undefined') {
+        return;
+    }
+
     var shortFore = resultForecast.forecast.simpleforecast
 
     //Date
@@ -70,6 +82,8 @@ function updateTextFore(resultForecast){
     $("#EstPrecip4").text("Est. Precipitation: " + shortFore.forecastday[3].qpf_allday.in + '"');
 
 }
-function updateTextCond(resultConditions){
-    $("#title").text("Weather for " + resultConditions.current_observation.display_location.full);
+function updateTextCond(resultConditions) {
+    if (typeof resultConditions.current_observation !== 'undefined') {
+        $("#title").text("Weather for " + resultConditions.current_observation.display_location.full);
+    }
 }

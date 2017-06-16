@@ -1,102 +1,157 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        
-        <!-- Include this tag to ensure proper mobile rendering -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
-        <title>Weather App</title>
-        
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-        <!-- Optional theme -->
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        
-        <link rel="stylesheet" href="main.css"/>
-        <link rel="icon" type="favicon.ico" href="favicon.ico">
-        
-        
-    </head>
-    <body>
-         
-          <div class="jumbotron text-center">
-            <h1 id="title">Weather for Your City</h1>
-        </div>
-        
-        <div class="container-fluid">
-           <div class="row">
-               <div class = "text-center well well-sm ">
-                    <form class="form-inline">
-                  <div class="form-group">
-                    <label form="zip-code">Zip Code:</label>
-                    <input type="text" class="form-control" id="zip-code" placeholder="Enter Zip Code">
-                  </div>
-                  <button type="submit" class="btn btn-default" id="submit">Submit</button>
+<head>
+    <meta charset="utf-8">
+
+    <!-- Include this tag to ensure proper mobile rendering -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Weather App</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="main.css" />
+    <link rel="icon" type="favicon.ico" href="favicon.ico">
+
+
+</head>
+
+<body>
+
+    <div class="jumbotron text-center">
+        <h1 id="title">Weather for Your City</h1>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="text-center well well-sm ">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label form="zip-code">Zip Code:</label>
+                        <input type="text" class="form-control" id="zip-code" placeholder="Enter Zip Code">
+                    </div>
+                    <button type="submit" class="btn btn-default" id="submit">Submit</button>
                 </form>
-                </div>
             </div>
-            <!--Weather Table-->
+        </div>
+        <!--Weather Table-->
+        <div>
+            <img src="/gears.gif" alt="Rotating Gears" id="weather-spinner" class="center-block">
+        </div>
+        
         <div id="weather-table">
-        <div class="hidden-sm col-md-2"></div>
-        <div class="col-xs-12 col-sm-6 col-md-2 well">
-            <table class="table text-center">
-                <thead><tr><th id="Day1" class="text-center"></th></tr></thead>
-                <tr><td id="Day1Cond"></td></tr>
-                <tr><td><img src = "" id="Day1Icon"></td></tr>
-                <tr><td id="Day1HighLow"></td></tr>
-                <tr><td id="EstPrecip1"></td></tr>
-            </table>
+            <div class="hidden-sm col-md-2"></div>
+            <div class="col-xs-12 col-sm-6 col-md-2 well">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th id="Day1" class="text-center"></th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td id="Day1Cond"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="" id="Day1Icon"></td>
+                    </tr>
+                    <tr>
+                        <td id="Day1HighLow"></td>
+                    </tr>
+                    <tr>
+                        <td id="EstPrecip1"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-2 well">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th id="Day2" class="text-center"></th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td id="Day2Cond"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="" id="Day2Icon"></td>
+                    </tr>
+                    <tr>
+                        <td id="Day2HighLow"></td>
+                    </tr>
+                    <tr>
+                        <td id="EstPrecip2"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-2 well">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th id="Day3" class="text-center"></th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td id="Day3Cond"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="" id="Day3Icon"></td>
+                    </tr>
+                    <tr>
+                        <td id="Day3HighLow"></td>
+                    </tr>
+                    <tr>
+                        <td id="EstPrecip3"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-2 well">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th id="Day4" class="text-center"></th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td id="Day4Cond"></td>
+                    </tr>
+                    <tr>
+                        <td><img src="" id="Day4Icon"></td>
+                    </tr>
+                    <tr>
+                        <td id="Day4HighLow"></td>
+                    </tr>
+                    <tr>
+                        <td id="EstPrecip4"></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="hidden-sm col-md-2"></div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-2 well">
-            <table class="table text-center">
-                <thead><tr><th id="Day2" class="text-center"></th></tr></thead>
-                <tr><td id="Day2Cond"></td></tr>
-                <tr><td><img src = "" id="Day2Icon"></td></tr>
-                <tr><td id="Day2HighLow"></td></tr>
-                <tr><td id="EstPrecip2"></td></tr>
-            </table>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-2 well">
-            <table class="table text-center">
-                <thead><tr><th id="Day3" class="text-center"></th></tr></thead>
-                <tr><td id="Day3Cond"></td></tr>
-                <tr><td><img src = "" id="Day3Icon"></td></tr>
-                <tr><td id="Day3HighLow"></td></tr>
-                <tr><td id="EstPrecip3"></td></tr>
-            </table>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-2 well">
-            <table class="table text-center">
-                <thead><tr><th id="Day4" class="text-center"></th></tr></thead>
-                <tr><td id="Day4Cond"></td></tr>
-                <tr><td><img src = "" id="Day4Icon"></td></tr>
-                <tr><td id="Day4HighLow"></td></tr>
-                <tr><td id="EstPrecip4"></td></tr>
-            </table>
-        </div>
-        <div class="hidden-sm col-md-2"></div>
-        </div>    
-        </div>
-        
+    </div>
 
-        
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
-        <script type="text/javascript" src="script.js"></script>
-        
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    </body>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="script.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
 
 <!--Reference to weather underground-->
-    <footer class="text-center well">
-        <img src = "//icons.wxug.com/graphics/wu2/logo_130x80.png">
-        <p>Powered by Weather Underground</p>
-        <a href="http://www.wunderground.com">http://www.wunderground.com</a>
-    </footer>
+<footer class="text-center well">
+    <img src="//icons.wxug.com/graphics/wu2/logo_130x80.png">
+    <p>Powered by Weather Underground</p>
+    <a href="http://www.wunderground.com">http://www.wunderground.com</a>
+</footer>
+
 </html>
 
 
